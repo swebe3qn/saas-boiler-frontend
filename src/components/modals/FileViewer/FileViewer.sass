@@ -1,0 +1,76 @@
+@import '../../../styles/_variables'
+
+.FileViewer
+  overflow: scroll
+
+  @media (max-width: $mobile)
+    .react-pdf__Document
+      max-width: 92vw
+
+      .react-pdf__Page
+        max-width: 100%
+        min-width: 0!important
+        min-height: 0!important
+
+        .react-pdf__Page__canvas
+          width: 100%!important
+          height: auto!important
+
+    .btn.zoom
+      display: none!important
+
+  img.image
+    max-width: 90vw
+    max-height: 90vh
+    background: $white
+
+  & > *
+    outline: none
+
+  .react-pdf__Page__annotations,
+  .react-pdf__Page__textContent
+    display: none
+
+  .legend
+    position: fixed
+    bottom: 5rem
+    left: 50%
+    transform: translateX(-50%)
+    display: flex
+    align-items: center
+    opacity: 0
+    transition: opacity .3s ease
+
+    &.show
+      opacity: 1
+
+    .inner
+      display: flex
+      align-items: center
+      justify-content: center
+      background: $white
+      box-shadow: 0 30px 40px 0 rgba(16, 36, 94, .2)
+      border-radius: $radius
+      overflow: hidden
+
+    .info
+      padding: 0 1rem
+      min-width: 140px
+
+    .btn
+      height: 3rem
+      width: 3rem
+      display: flex
+      justify-content: center
+      align-items: center
+      transition: background .3s ease
+      cursor: pointer
+      background: $white
+
+      &.zoom
+        margin: 0 1rem
+        box-shadow: 0 30px 40px 0 rgba(16, 36, 94, .2)
+        border-radius: $radius
+
+      &:hover
+        background: $light-gray

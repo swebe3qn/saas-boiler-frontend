@@ -1,0 +1,93 @@
+@import '../../styles/_variables'
+
+.Dashboard
+  height: 100%
+
+  & > .flex
+    height: calc(100% - 32px - 1rem)
+    width: 100%
+    overflow: hidden
+    justify-content: space-between
+
+    .left
+      width: 35%
+
+      @media (max-width: $mobile)
+        width: calc(100vw)
+        height: calc(100vh)
+        margin-right: 0
+        position: fixed
+        top: 0
+        left: 0
+        transform: translateX(calc(-100% - $sidePaddingMobile))
+        transition: transform .3s ease
+        overflow: visible
+        padding: calc(100px) $sidePaddingMobile $sidePaddingMobile
+        z-index: 2
+        background: $light-gray
+
+        &.show
+          transform: translateX(0)
+
+        .toggle
+          background: $secondary
+          bottom: 1rem
+          right: 0
+          transform: translateX(calc(50% + $sidePaddingMobile / 2))
+          position: absolute
+          z-index: 3
+          display: flex
+          align-items: center
+          border-radius: $radius
+
+          & > *
+            color: #fff
+            margin: 10px
+
+            &:first-of-type
+              margin-right: 20px
+
+  .events-list-wrapper
+    position: relative
+    overflow-x: hidden
+    width: 100%
+    height: calc(100% - 56px - 1rem)
+    z-index: 3
+    overflow-y: scroll
+
+  .events-list
+    width: 100%
+    border-radius: $radius
+    overflow-y: scroll
+    position: relative
+
+    @media (max-width: $mobile)
+      width: 100%
+
+    h2
+      margin: 2rem 0 0
+
+    .events-group
+      .event-cards
+        cursor: pointer
+
+        &:last-of-type
+          margin-bottom: 0
+
+      .blank-card
+        background: $white
+        border-radius: $radius
+        box-shadow: $shadow
+        padding: 1rem
+
+  .event-details
+    width: calc(65% - 3rem)
+    height: 100%
+    overflow-y: scroll
+
+    @media (max-width: $mobile)
+      width: 100%
+
+    .EventDetails
+      height: 100%
+      min-height: 600px

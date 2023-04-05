@@ -1,0 +1,1 @@
+export let someEnumArray = [] // this is an example on how to define enums

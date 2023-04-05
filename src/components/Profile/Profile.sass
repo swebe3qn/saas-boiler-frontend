@@ -1,0 +1,83 @@
+@import './../../styles/_variables'
+
+.Account
+  .flex
+    justify-content: space-between
+
+  .subscription-info
+    border: none
+    margin-bottom: 2rem
+    height: 100%
+    width: 35%
+    margin-right: 2rem
+
+    h1
+      @media (max-width: $mobile)
+        margin-bottom: 0
+
+    p
+      @media (max-width: $mobile)
+        margin-top: 0
+
+      span
+        margin-top: 10px
+
+    .MuiButton-root
+      margin-top: 2rem
+
+      @media (max-width: $mobile)
+        margin-top: 0
+        margin-bottom: 2rem
+
+  .org-data
+    width: calc(65% - 3rem)
+
+    .organization
+      margin-top: 2rem
+      padding: 2rem
+      background: $white
+      box-shadow: $shadow
+      border-radius: $radius
+
+      @media (max-width: $mobile)
+        padding: 1rem
+
+      .subscription
+        margin-top: 2rem
+
+        @media (max-width: $mobile)
+          .MuiButton-root
+            width: 100%
+            margin-top: 10px
+
+    .set-first-org
+      background: $white
+      box-shadow: $shadow
+      border-radius: $radius
+      padding: 1rem
+      margin-top: 2rem
+
+  @media (max-width: $mobile)
+    & > .flex
+      flex-direction: column
+      flex-wrap: wrap
+
+      & > div
+        width: 100%
+
+      .org-data
+        .with-button
+          flex-direction: column
+          flex-wrap: wrap
+          align-items: flex-start
+
+          .MuiButton-root
+            margin-top: 10px
+
+        .first-sub
+          flex-direction: column
+          flex-wrap: wrap
+
+          & > div
+            margin-left: 0!important
+            margin-right: 0!important

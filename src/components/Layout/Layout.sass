@@ -1,0 +1,19 @@
+@import '../../styles/_variables'
+
+.Layout
+  display: flex
+  align-items: stretch
+  min-height: calc(100vh)
+
+  .content
+    width: calc(100vw)
+    // width: calc(100vw - $sideBarWidth)
+    // margin-left: $sideBarWidth
+    padding: 1rem $sidePadding 2rem
+    height: calc(100vh - 70px)
+    margin-top: 70px
+    overflow-y: scroll
+
+    @media (max-width: $mobile)
+      padding: 0 $sidePaddingMobile
+      margin-top: 50px

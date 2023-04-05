@@ -1,0 +1,75 @@
+@import '../../../styles/_variables'
+
+.Topbar
+  height: $topBarHeight
+  width: 100vw
+  position: fixed
+  top: 0
+  left: 0
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 0 $sidePadding
+  z-index: 3
+
+  @media (max-width: $mobile)
+    padding: 0 $sidePaddingMobile
+    height: $topBarHeightMobile
+
+  .left
+    display: flex
+    align-items: center
+
+    .nav
+      display: flex
+      align-items: center
+
+      & > .nav-link
+        margin-left: 2rem
+
+      @media (max-width: $mobile)
+        position: fixed
+        top: 0
+        left: 0
+        height: 100vh
+        width: 100vw
+        z-index: 99
+        background: $light-gray
+        padding: 2rem 1rem
+        flex-direction: column
+        align-items: flex-start
+        transition: transform .3s ease
+        transform: translateX(-100%)
+
+        &.active
+          transform: translateX(0)
+
+        .nav-link
+          margin-left: 0
+          margin-top: 1rem
+
+        .nav-close
+          position: absolute
+          top: 1rem
+          right: 1rem
+          cursor: pointer
+
+    .logo
+      height: 40px
+      margin-right: 3rem
+
+      @media (max-width: $mobile)
+        height: 30px
+
+      img
+        height: 100%
+        width: auto
+
+    .org-select
+      margin-left: 2rem
+
+      @media (max-width: $mobile)
+        margin-left: 0
+
+      .MuiInputBase-root
+        margin: 0

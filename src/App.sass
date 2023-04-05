@@ -1,0 +1,340 @@
+@import './styles/_variables'
+
+@font-face
+  font-family: 'Proxima Bold'
+  src: url('./styles/fonts/proxima-nova-alt-bold.otf') format('opentype')
+
+@font-face
+  font-family: 'Proxima Light'
+  src: url('./styles/fonts/proxima-nova-alt-light.otf') format('opentype')
+
+@font-face
+  font-family: 'Proxima Regular'
+  src: url('./styles/fonts/proxima-nova-alt-regular.otf') format('opentype')
+
+@font-face
+  font-family: 'Proxima Thin'
+  src: url('./styles/fonts/proxima-nova-alt-thin.otf') format('opentype')
+
+@font-face
+  font-family: 'Proxima Semibold'
+  src: url('./styles/fonts/proxima-nova-semibold.otf') format('opentype')
+
+*
+  box-sizing: border-box
+
+html, body
+  padding: 0
+  margin: 0
+  font-family: 'Proxima Regular', Helvetica, sans-serif
+  background: $light-gray
+
+h1, h2, h3, h4, h5
+  margin-top: 0
+  font-family: 'Proxima Bold', Helvetica, sans-serif
+
+strong, .strong
+  font-family: 'Proxima Bold', Helvetica, sans-serif
+
+.crop-text
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+
+a
+  color: inherit
+  text-decoration: none
+
+.text-center
+  text-align: center
+
+.text-right
+  text-align: right
+
+.primary
+  color: $primary
+
+.error
+  color: $error
+
+.success
+  color: $success
+
+.warning
+  color: $warning
+
+.MuiSvgIcon-root
+  &.primary
+    fill: $primary
+
+  &.error
+    fill: $error
+
+  &.success
+    fill: $success
+
+  &.warning
+    fill: $warning
+
+.pointer
+  cursor: pointer
+
+.box-shadow
+  box-shadow: $shadow
+
+.with-button
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+  h1, h2, h3, h4, h5
+    margin-bottom: 0
+
+.bg-canceled
+  background: $error
+.bg-paused
+  background: $warning
+.bg-done
+  background: $success
+.bg-open
+  background: $info
+.bg-in_progress
+  background: $primary
+
+.flex
+  display: flex
+
+.align-center
+  align-items: center
+
+.align-end
+  align-items: flex-end
+
+.justify-space-between
+  justify-content: space-between
+
+.divider
+  height: 1px
+  width: 100%
+  background: red
+
+.MuiIconButton-root
+
+.MuiModal-root
+  margin: 0 auto
+  display: flex
+  align-items: center
+  justify-content: center
+
+  .Modal-box
+    background: $white
+    max-width: 500px
+    padding: $sidePadding
+    border-radius: $radius
+    max-height: 90vh
+    overflow-y: scroll
+
+  @media (max-width: $mobile)
+    .Modal-box
+      max-width: 95vw
+      padding: 2rem $sidePaddingMobile
+
+.MuiTextField-root
+  margin-bottom: 1rem!important
+
+.MuiFormHelperText-root
+  line-height: 1.2!important
+  margin: 5px 0 0!important
+
+.MuiTimeline-root
+  padding: 0!important
+  margin: 0
+
+  .MuiTimelineContent-root
+    padding-right: 0
+
+.file-upload-box
+  border-radius: $radius
+  border: 3px dashed $secondary
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 1rem
+  cursor: pointer
+
+  .left
+    display: flex
+    align-items: center
+
+    span
+      margin-left: .5rem
+
+.card
+  border-radius: $radius
+  box-shadow: $shadow
+  padding: 2rem
+  background: $white
+
+.log-note
+  margin-bottom: 1.2rem
+
+  &:last-of-type
+    margin-bottom: 0
+
+  .avatar
+    height: 2rem
+    width: 2rem
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 50%
+    margin-right: .5rem
+    background: $secondary
+    color: $white
+    font-weight: bold
+
+  &:not(.auto)
+    display: flex
+
+    .message
+      padding: 1rem
+      background: $light-gray
+      border-radius: $radius
+      flex: 1
+
+      p
+        margin: 0
+
+      small
+        opacity: .6
+
+  &.auto
+    & > div:first-of-type
+      position: relative
+      display: flex
+      align-items: center
+
+      p
+        margin: 0
+
+        span
+          opacity: .6
+
+    .files
+      padding-left: 2.5rem
+      display: flex
+      margin: 0 0 1rem
+      flex-wrap: wrap
+
+.status-btn
+  display: flex
+  padding: .5rem
+  border-radius: $radius
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  min-width: 120px
+  max-width: 120px
+  background: $white
+  box-shadow: $shadow
+
+  &.active
+    background: $primary
+    color: $secondary
+
+.dropdown
+  background: $white
+  border-radius: $radius
+  box-shadow: $shadow
+  width: 300px
+  z-index: 1
+  max-height: 80vh
+  overflow-y: scroll
+
+  .item
+    cursor: pointer
+    margin: .5rem 0
+    transition: background .3s ease
+    padding: .5rem 1rem
+    width: 100%
+    text-align: left
+
+    &:hover
+      background: $light-gray
+
+// dropzone uploader
+.dzu-inputLabel
+  color: $secondary!important
+
+.dzu-inputLabelWithFiles
+  color: $secondary!important
+  margin: 1rem auto -10px auto!important
+
+.dzu-submitButton
+  background-color: $primary!important
+// dropzone uploader end
+
+.table
+  .item
+    border-bottom: 1px solid $gray
+    padding: 1rem 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    &:first-of-type
+      padding-top: 0
+
+    &:last-of-type
+      border-bottom: none
+      padding-bottom: 0
+
+.text-search
+  background: $white
+  box-shadow: $shadow
+  border: none
+  border-radius: $radius
+
+  fieldset
+    border: none
+
+.static-filters
+  display: flex
+  margin-bottom: 1rem
+  position: relative
+  z-index: 4
+  max-width: 100%
+
+  & > div  .MuiButton-root
+    white-space: nowrap
+    width: auto
+    display: inline-block
+
+    @media (max-width: $mobile)
+      margin-right: $sidePaddingMobile
+
+  .filters
+    display: flex
+    align-items: center
+
+  .filters-wrapper
+    margin-right: 10px
+    position: relative
+
+  .dropdown
+    padding: .1rem 0
+    position: absolute
+    top: calc(100% + 10px)
+
+    .item
+      padding: .1rem 1rem
+
+@media (min-width: $mobilePlusOne)
+  .mobile-only
+    display: none!important
+
+@for $i from 0 through 10
+  .mb-#{$i}rem
+    margin-bottom: #{$i}rem
+  .mt-#{$i}rem
+    margin-top: #{$i}rem
